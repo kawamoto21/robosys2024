@@ -1,5 +1,5 @@
 # convert_and_reverseコマンド
-![test](https://github.com/kawamoto/robosys2024/actions/workflows/test.yml/badge.svg)
+![test]
 
 標準入力されたものを変換する
 
