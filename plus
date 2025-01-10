@@ -1,7 +1,0 @@
-#!/bin/bash
-
-# 標準入力からデータを読み取り、大文字に変換して標準出力に出力
-while read line; do
-    echo "$line" | tr '[:lower:]' '[:upper:]'
-done
-
