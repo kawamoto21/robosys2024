@@ -2,39 +2,24 @@
 # SPDX-FileCopyrightText: 2024 Sou Kawamoto <s23c1040mc@s.chibakoudai.jp>
 # SPDX-License-Identifier: BSD-3-Clause
 
-# テストケースの定義
-test_cases=(
-    "Hello World"
-    "123 AbC"
-    "Test123"
-    "aBcDeFg"
-    " "
-)
+ng () {
+    echo "${1}行目が違うよ"
+    res=1
+}
 
-# 期待される出力の定義
-expected_outputs=(
-    "DLROw OLLEh"
-    "cBa 321"
-    "321tSET"
-    "GfEdCbA"
-    " "
-)
+res=0
 
-# スクリプトのパス
-script_path="./convert_and_reverse.sh"
+# テストデータを用意
+input="Hello\nWorld\nPython\nTest"
+expected_output="OLLEh\nDLROw\nNOHTYp\nTSET"
 
-# テストの実行
-for i in "${!test_cases[@]}"; do
-    input="${test_cases[$i]}"
-    expected="${expected_outputs[$i]}"
-    output=$(echo "$input" | $script_path)
-    
-    if [ "$output" == "$expected" ]; then
-        echo "Test $((i+1)): Passed"
-    else
-        echo "Test $((i+1)): Failed"
-        echo "  Input:    $input"
-        echo "  Expected: $expected"
-        echo "  Got:      $output"
-    fi
-done
+# Pythonスクリプトの出力を取得
+output=$(echo -e "$input" | python3 convert_and_reverse.py)
+
+# 出力を比較
+if [ "$output" != "$expected_output" ]; then
+    ng "$LINENO"
+fi
+
+[ "$res" = 0 ] && echo "OK" # 通ったのが（人間に）分かるように表示
+exit $res
