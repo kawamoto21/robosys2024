@@ -11,7 +11,7 @@ res=0
 
 # テストデータを用意
 input="Hello\nWorld\nPython\nTest"
-expected_output="OLLEh\nDLROw\nNOHTYp\nTSET"
+expected_output="OLLEh\nDLROw\nNOHTYp\nTSEt"
 
 # Pythonスクリプトの出力を取得
 output=$(echo -e "$input" | python3 convert_and_reverse.py)
