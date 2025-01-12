@@ -1,4 +1,4 @@
-#!/usr/bin#!/usr/bin/env python33
+#!/usr/bin#!/usr/bin/env python3
 # SPDX-FileCopyrightText: 2024 Sou Kawamoto <s23c1040mc@s.chibakoudai.jp>
 # SPDX-License-Identifier: BSD-3-Clause
 
